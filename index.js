@@ -3,6 +3,7 @@ const app = express();
 var cors = require("cors");
 const port = process.env.PORT || 5000;
 const categories = require("./Data/categories.json");
+const news = require("./Data/news.json");
 
 app.use(cors());
 
@@ -12,6 +13,10 @@ app.get("/", (req, res) => {
 
 app.get("/categories", (req, res) => {
 	res.send(categories);
+});
+
+app.get("/news", (req, res) => {
+	res.send(news);
 });
 
 app.listen(port, () => {
